@@ -25,10 +25,28 @@
             animation: fadeIn 1s ease-out;
         }
 
+        /* NEW header with image */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Size image relative to H1 text */
+        h1 img {
+            width: 2em;
+            height: 2em;
+            border-radius: 50%;
+            object-fit: cover;
+            vertical-align: middle;
+            margin-right: 0.5rem;
+        }
+
         h1 {
             font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 2rem;
             color: #2563eb;
             text-align: center;
         }
@@ -93,23 +111,6 @@
             background: rgba(0, 0, 0, 0.03);
         }
 
-        .social svg {
-            width: 1.5rem;
-            height: 1.5rem;
-        }
-
-        .social a[aria-label="LinkedIn"] {
-            color: #0A66C2;
-        }
-
-        .social a[aria-label="Mastodon"] {
-            color: #9333EA;
-        }
-
-        .social a[aria-label="ORCID"] {
-            color: #84CC16;
-        }
-
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -137,27 +138,32 @@
             p {
                 font-size: 1rem;
             }
+
+            /* Stack image above name on small screens */
+            .header {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
 
-        <h1><img src="photo.jpg" alt="Jon Eisenberg">Jon Eisenberg</h1>
+        <!-- UPDATED HEADER WITH IMAGE -->
+        <div class="header">
+            
+            <h1><img src="your-photo.jpg" alt="Jon Eisenberg">Jon Eisenberg</h1>
+        </div>
+
         <div class="content">
             <p>
-                Jon Eisenberg is Senior Program Director for <a href="https://www.nationalacademies.org/units/CAST-CRTS-25-P-699">Computing Research, Technologies, and Systems </a> at the <a href="https://www.nas.edu/">National Academies of Sciences, Engineering, and Medicine</a>, where he leads work on computing, AI, cybersecurity, and related public policy. Before joining the Academies he was a <a href="https://www.aaas.org/programs/science-technology-policy-fellowships">AAAS Science, Engineering, and Diplomacy Fellow</a> focused on expanding global digital connectivity. He holds a Ph.D. in experimental high-energy physics from the University of Washington and a B.S. in physics with honors from UMass Amherst.
-                
+                Jon Eisenberg is Senior Program Director for <a href="https://www.nationalacademies.org/units/CAST-CRTS-25-P-699">Computing Research, Technologies, and Systems </a> at the <a href="https://www.nas.edu/">National Academies of Sciences, Engineering, and Medicine</a>, where he leads work on computing, AI, cybersecurity, and related public policy. Before joining the Academies he was <a href="https://www.aaas.org/programs/science-technology-policy-fellowships">AAAS Science, Engineering, and Diplomacy Fellow</a> focused on expanding global digital connectivity. He holds a Ph.D. in experimental high-energy physics from the University of Washington and a B.S. in physics with honors from UMass Amherst.
             </p>
 
             <div class="social">
-                <a href="https://www.linkedin.com/in/joneisenberg/" aria-label="LinkedIn"> LinkedIn
-   
-                </a>
+                <a href="https://www.linkedin.com/in/joneisenberg/" aria-label="LinkedIn"> LinkedIn</a>
                
-                <a href="https://orcid.org/0000-0003-4231-4211" aria-label="ORCID"> Select publications on ORCID
-     
-                </a>
+                <a href="https://orcid.org/0000-0003-4231-4211" aria-label="ORCID"> Select publications on ORCID</a>
             </div>
         </div>
     </div>
